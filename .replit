@@ -1,4 +1,4 @@
-entrypoint="index.html"
+entrypoint="index.js"
 hidden=[".config"]
 modules = ["web", "python-base-3.13"]
 
@@ -27,7 +27,7 @@ author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "python3 -m http.server 5000 --bind 0.0.0.0"
+args = "PORT=5000 node index.js"
 waitForPort = 5000
 
 [workflows.workflow.metadata]
